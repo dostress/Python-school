@@ -83,6 +83,7 @@ while True:
 
     doAnother = input("Would you like to calculate another? (y/n) ").lower()
     if doAnother == "y":
+        print("Doing it again!\n")
         continue
     else:
         break
