@@ -1,5 +1,11 @@
 # How to git really quick
 
+Table of contents:
+
+  1. [Going into the directory](#1)
+  2. [Adding the code to the repo](#2)
+  3. [Get the changed code from the repo](#3)
+
 ## 1. Going into the directory and initializing the repo. <a name="1"></a>
 
 1. Go to your `/Python-Class` directory
@@ -18,7 +24,7 @@ Reinitialized existing Git repository in /mnt/c/Python-Class/.git/
 
 Otherwise, it should still work the same as always.
 
-## 2. Adding the code to the repo
+## 2. Adding the code to the repo <a name="2"></a>
 
 Let's say you've added a new python program (`python.py`)
 
@@ -117,7 +123,7 @@ Go to the GitHub repo is the files are added to the repo. Notify Hansel so that 
 
 But how do I get the code from Hansel?
 
-## 3. Getting the changed code(s) from the repo
+## 3. Getting the changed code(s) from the repo <a name="3"></a>
 
 Hansel just changed, maybe added some code to help you out. Now how do I get the code?
 
