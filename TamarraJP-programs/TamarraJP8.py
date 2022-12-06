@@ -7,7 +7,7 @@ from math import sin, cos, sqrt, atan2, radians
 
 class GeoPoint():
     # Defining the variables right away and initiate the parameters as 0
-    def __init__(self, lat=0, lon=0, description=""):
+    def __init__(self, lat=0.0, lon=0.0, description=""):
         self.lat = lat
         self.lon = lon
         self.description = description
@@ -29,7 +29,7 @@ class GeoPoint():
         lon2 = radians(point.lon)
 
         r = 6371.0
-        a = sin((self.lat-lat)/2)**2 + cos(lat) * cos(self.lat) * sin((self.lon-lon)/2)**2
+        a = sin((lat1-lat2)/2)**2 + cos(lat2) * cos(lat1) * sin((lon1-lon2)/2)**2
         #c = 2 * atan2( √a, √(1−a) )
         c = 2*atan2(sqrt(a),sqrt(1-a))
         d = r * c
@@ -58,7 +58,7 @@ while True:
     pointUser = GeoPoint(userlat,userlon, 'User Location')
     distanceToOne = point1.CalcDistance(pointUser)
     distanceToTwo = point2.CalcDistance(pointUser)
-    CalculatePoint1 = point1.CalcDistance(userlat, userlon) # Calculating point1's self.lat/lon and the users lat/lon
+    CalculatePoint1 = point1.CalcDistance() # Calculating point1's self.lat/lon and the users lat/lon
     CalculatePoint2 = point2.CalcDistance(userlat, userlon)
 
     if CalculatePoint1 < CalculatePoint2:
