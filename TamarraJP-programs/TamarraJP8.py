@@ -58,8 +58,8 @@ while True:
     pointUser = GeoPoint(userlat,userlon, 'User Location')
     distanceToOne = point1.CalcDistance(pointUser)
     distanceToTwo = point2.CalcDistance(pointUser)
-    CalculatePoint1 = point1.CalcDistance() # Calculating point1's self.lat/lon and the users lat/lon
-    CalculatePoint2 = point2.CalcDistance(userlat, userlon)
+    CalculatePoint1 = point1.CalcDistance(pointUser) # Calculating point1's self.lat/lon and the users lat/lon
+    CalculatePoint2 = point2.CalcDistance(pointUser)
 
     if CalculatePoint1 < CalculatePoint2:
         print(f"You are the closests to {point1.GetDescription()} which is located at {point1.GetPoint()[0]} and {point1.GetPoint()[1]}")
