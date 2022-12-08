@@ -22,7 +22,7 @@ class GeoPoint():
         return (self.lat, self.lon)
 
      # Calculation
-    def CalcDistance(self, lat, lon): 
+    def CalcDistance(self, point): 
         r = 6371.0
         a = sin((self.lat-lat)/2)**2 + cos(lat) * cos(self.lat) * sin((self.lon-lon)/2)**2
         #c = 2 * atan2( √a, √(1−a) )
@@ -37,7 +37,7 @@ class GeoPoint():
     # Calling that description
     def GetDescription(self):
         return self.description
-
+    
 ## MAIN ##
 
 #loop
@@ -60,7 +60,7 @@ while True:
     print()
     print(point2.GetDescription(),"\n----------\n",point2.GetPoint(),"\n")
     
-    CalculatePoint1 = point1.CalcDistance(userlat1, userlon1) # Calculating point1's self.lat/lon and the users lat/lon
+    CalculatePoint1 = point1.CalcDistance() # Calculating point1's self.lat/lon and the users lat/lon
     CalculatePoint2 = point2.CalcDistance(userlat2, userlon2) # Calculating point2's self.lat/lon and the users lat/lon 
     
     # !!You are closest to <description> which is located at <point’s lat and lon coordinates>
