@@ -48,11 +48,20 @@ class GeoPoint():
 
 
 ##  MAIN  ##
-while True:
+while True: 
     pointsList = []
-    newPoint = GeoPoint(lat, lon, description)
-    pointsList.append(newPoint)
+    with open("./Points.txt", "r") as f:
+        for i in f.readlines():
+            print (i)
+            line = i.split(",")
+            pointsList.append(i)
+            
+        print(pointsList)
 
+    userlat = float(input("Enter your latitude: "))
+    userlon = float(input("Enter your longitude: "))
+    pointUser = GeoPoint(userlat,userlon, 'User Location')
+    
 
     doAnother = input("Would you like to calculate another? (y/n) ").lower()
     if doAnother == "y":
