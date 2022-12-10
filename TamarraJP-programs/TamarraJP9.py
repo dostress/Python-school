@@ -4,6 +4,7 @@
 # Purpose: demonstrates how to define a class with a file input
 
 from math import sin, cos, sqrt, atan2, radians
+import os
 
 class GeoPoint():
     # Defining the variables right away and initiate the parameters as 0
@@ -50,13 +51,17 @@ class GeoPoint():
 ##  MAIN  ##
 while True: 
     pointsList = []
-    with open("./Points.txt", "r") as f:
-        for i in f.readlines():
-            print (i)
-            line = i.split(",")
-            pointsList.append(i)
-            
-        print(pointsList)
+    # print(os.listdir())
+    try:
+        with open("TamarraJP-programs/Points.txt", "r") as f:
+            for i in f.readlines():
+                print (i)
+                line = i.split(",")
+                pointsList.append(line)
+                
+            print(pointsList)
+    except: 
+        print("There was an error, are you in the right file path?")
 
     userlat = float(input("Enter your latitude: "))
     userlon = float(input("Enter your longitude: "))
