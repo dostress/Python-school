@@ -53,7 +53,7 @@ while True:
     pointsList = []
     # print(os.listdir())
     try:
-        with open("TamarraJP-programs/Points.txt", "r") as f:
+        with open("Points.txt", "r") as f:
             for i in f.readlines():
                 print (i)
                 line = i.split(",")
@@ -66,7 +66,8 @@ while True:
     userlat = float(input("Enter your latitude: "))
     userlon = float(input("Enter your longitude: "))
     pointUser = GeoPoint(userlat,userlon, 'User Location')
-    
+    newPoint = GeoPoint(pointsList)
+    CalculatePoint = newPoint.CalcDistance(pointUser)
 
     doAnother = input("Would you like to calculate another? (y/n) ").lower()
     if doAnother == "y":
